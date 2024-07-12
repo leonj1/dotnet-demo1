@@ -4,7 +4,7 @@ tasks:
     command: cd WeatherApi ; dotnet build
   - command: |
           # wait for the port, and then browse a specific path
-          gp ports await 5012 && gp preview --external $(gp url 5012)/swagger
+          gp ports await 5012 && gp preview $(gp url 5012)/swagger
 ports:
   - name: WeatherApp
     description: Swagger
