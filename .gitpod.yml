@@ -1,0 +1,12 @@
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+tasks:
+  - name: Script Task
+    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+    command: echo 'start script'
+
+ports:
+  - name: WeatherApp
+    description: Swagger
+    port: 5000
+    onOpen: open-preview
+    visibility: public
