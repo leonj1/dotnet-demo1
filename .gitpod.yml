@@ -2,10 +2,12 @@ tasks:
   - name: Install dotnet core
     init: sudo apt-get update && sudo apt-get install -y dotnet-sdk-8.0
     command: cd WeatherApi ; dotnet build
-
+  - command: |
+          # wait for the port, and then browse a specific path
+          gp ports await 5012 && gp preview --external $(gp url 5012)/swagger
 ports:
   - name: WeatherApp
     description: Swagger
-    port: 5000
+    port: 5012
     onOpen: open-preview
-    visibility: public
+    visibility: private
